@@ -102,8 +102,16 @@ final class DetailsViewController: UIViewController {
             self?.priceLabel.text = ad.price
             self?.emailLabel.text = ad.email
             guard let url = URL(string: ad.image) else { return }
+
             self?.photoImageView.kf.indicatorType = .activity
-            self?.photoImageView.kf.setImage(with: url)
+            self?.photoImageView.kf.setImage(with: url, options: nil) { [weak self] result in
+                switch result {
+                case .success(let value):
+                    self?.photoImageView.image = value.image
+                case .failure(_):
+                    break
+                }
+            }
         }
 
         viewModel.$error.bind { [weak self] error in
