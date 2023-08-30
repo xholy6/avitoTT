@@ -11,4 +11,5 @@ extension UIColor {
     static var aBlue: UIColor? { return UIColor(named: "aBlue") }
     static var aGray: UIColor? { return UIColor(named: "aGray")}
     static var aRed: UIColor? { return UIColor(named: "aRed") }
+    static var aGreen: UIColor? { return UIColor(named: "aGreen") }
 }
