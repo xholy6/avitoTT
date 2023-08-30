@@ -69,16 +69,6 @@ final class CatalogCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        priceLabel.text = nil
-        locationLabel.text = nil
-        dateLabel.text = nil
-        titleLabel.text = nil
-        productImageView.image = nil
-        productImageView.kf.cancelDownloadTask()
-    }
-
     func configCell(title: String, location: String, price: String, date: String, image: String) {
         titleLabel.text = title
         priceLabel.text = price
